@@ -1,19 +1,21 @@
 const f1 = () => {
   console.log("F1");
-}
+};
 
 const f2 = () => {
   console.log("F2");
-}
+};
 
 const f3 = () => {
   console.log("F3");
-}
+};
 
 function main() {
-    console.log("Main function");
-    f1();
-    f2();
-    f3();
-    console.log("End");
+  console.log("Main function");
+  f1();
+  f2();
+  f3();
+  console.log("End");
 }
+
+main();
