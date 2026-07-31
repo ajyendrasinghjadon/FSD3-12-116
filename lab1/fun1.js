@@ -11,10 +11,11 @@ const f3 = () => {
 };
 
 function main() {
-  console.log("Main function");
-  f1();
-  f2();
-  f3();
+  console.log("Start");
+  setTimeout(f1, 0);
+  // setInterval(f2);
+  setImmediate(f2);
+  process.nextTick(f3);
   console.log("End");
 }
 

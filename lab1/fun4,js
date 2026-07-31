@@ -1,0 +1,23 @@
+const f1 = () => {
+    console.log("Hello F1");
+};
+
+const f2 = () => {
+    console.log("Hello F2");
+}
+
+const f3 = () => {  
+    console.log("Hello F3");
+}
+
+function main () {
+    console.log("Start");
+    setTimeout(f1, 50);
+    setTimeout(f3, 30);
+    new Promise((resolve, reject) => {
+        resolve("I am Promise 1");
+    });
+    new Promise((resolve, reject) => {
+        resolve("I am Promise 3");
+    });
+}
