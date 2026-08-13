@@ -1,3 +1,8 @@
-import { writeFile } from "fs/promises";
+import { writeFile, appendFile, readFile } from "fs/promises";
 
-await writeFile("hello.txt", "JS is easy");
+// await writeFile("hello.txt", "JS is easy");
+
+// await appendFile("hello.txt", "\nFS is much easy than others");
+
+const content = await readFile("hello.txt", "utf-8");
+console.log(content);

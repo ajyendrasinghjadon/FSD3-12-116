@@ -13,3 +13,10 @@
 
 
  All functions are proomise so it must be called with await
+
+ - writeFile writes a new file and if the file already exists it overwrites it.
+ - appendFile adds data to the file instead of overwriting as writeFile does.
+
+
+ - how to handle runtime errros ?
+  * by using try, catch, finally, throw
