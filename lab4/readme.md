@@ -17,7 +17,7 @@ script {
 
 ## REST API
 ### Representational State Transfer (REST)
-- majorly backend server return only data not html file
-- REST API uses (get, post, put, delete, patch) method to communicate
-- any browser can check only get method
+- majorly backend server return only data not html file.
+- REST API uses (get, post, put, delete, patch) method to communicate.
+- any browser can check only get method.
 - for other type we use third party API Tester like postmna, thunder client, echo api, etc.
