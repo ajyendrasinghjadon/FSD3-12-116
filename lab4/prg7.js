@@ -17,7 +17,8 @@ const server = http.createServer((req, res) => {
     `);
   }
   else if (req.url === "/api/users" && req.method === "GET") {
-    res.end(JSON.stringify(getUsers()));
+    const userId = Number(req.url.split("/").pop());
+    res.end(JSON.stringify({msg: `Showing details of user with Id ${userId}`}));
   } else if (req.url === "/api/users" && req.method === "POST") {
     let body = "";
     req.on('data', (chunk) => {
