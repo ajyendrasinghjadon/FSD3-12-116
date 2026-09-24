@@ -21,3 +21,8 @@ script {
 - REST API uses (get, post, put, delete, patch) method to communicate.
 - any browser can check only get method.
 - for other type we use third party API Tester like postmna, thunder client, echo api, etc.
+
+## Request Type: 
+1. GET -> Get all (URL: http://localhost:3000/api/users) and get by ID (URL: http://localhost:3000/api/users/101)
+2. POST-> (URL: http://localhost:3000/api/users) Data is sent by this method.
+3. DELETE -> (URL: http://localhost:3000/api/users) Data is deleted by this method
