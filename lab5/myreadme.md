@@ -4,3 +4,5 @@
 3. Install nodemon 
 4. Change type to "module" and inside test add start and dev.
 5. Install express
+6. Make a main js file and import express in there.
+7. 
