@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTrek - Online Coding Classes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="navigateTo('home')">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-slate-900 tracking-tight">TechTrek</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home"
+                        class="nav-link active text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                        data-target="home">Home</a>
+                    <a href="product.html"
+                        class="nav-link text-slate-500 font-medium hover:text-blue-600 transition-colors"
+                        data-target="courses">Courses</a>
+                    <a href="#about" class="nav-link text-slate-500 font-medium hover:text-blue-600 transition-colors"
+                        data-target="about">About</a>
+                    <a href="#testimonials"
+                        class="nav-link text-slate-500 font-medium hover:text-blue-600 transition-colors"
+                        data-target="testimonials">Testimonials</a>
+                    <a href="contact.html"
+                        class="nav-link text-slate-500 font-medium hover:text-blue-600 transition-colors"
+                        data-target="contact">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-blue-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 pb-4 px-4 space-y-2 shadow-lg">
+            <a href="#home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50"
+                data-target="home">Home</a>
+            <a href="#courses"
+                class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50"
+                data-target="courses">Courses</a>
+            <a href="#about"
+                class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50"
+                data-target="about">About</a>
+            <a href="#testimonials"
+                class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50"
+                data-target="testimonials">Testimonials</a>
+            <a href="#contact"
+                class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50"
+                data-target="contact">Contact</a>
+        </div>
+    </header>
+
+    <main class="w-full">
+        <section id="home" class="page-section active">
+            <div class="relative bg-slate-900 overflow-hidden min-h-[80vh] flex items-center">
+                <!-- Decorative background shapes -->
+                <div class="absolute inset-0 z-0">
+                    <div
+                        class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20">
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20">
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-blue-900/50 text-blue-300 text-sm font-semibold tracking-wider mb-4 border border-blue-700/50">#1
+                        Online Tech Institute</span>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+                        Master Your Tech Career <br class="hidden sm:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">From
+                            Anywhere</span>
+                    </h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-300 mb-10">
+                        Join thousands of students learning to code, build complex algorithms, and launch their careers
+                        with top-tier industry experts.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <button onclick="navigateTo('courses')"
+                            class="px-8 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/30 transition-all transform hover:-translate-y-0.5">
+                            Get Started
+                        </button>
+                        <button onclick="navigateTo('about')"
+                            class="px-8 py-3.5 border border-slate-600 text-base font-medium rounded-lg text-white hover:bg-slate-800 transition-all">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Features highlight -->
+            <div class="bg-white py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div>
+                            <div class="flex justify-center mb-4 text-blue-600">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Expert Curriculum</h3>
+                            <p class="mt-2 text-slate-500 text-sm">Designed by FAANG engineers to meet industry
+                                standards.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-center mb-4 text-blue-600">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Live & Recorded Classes</h3>
+                            <p class="mt-2 text-slate-500 text-sm">Flexible schedules with access to unlimited recording
+                                playbacks.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-center mb-4 text-blue-600">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Career Support</h3>
+                            <p class="mt-2 text-slate-500 text-sm">Resume building, mock interviews, and job referrals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="page-section py-16 sm:py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Featured Courses</h2>
+                    <p class="mt-4 text-lg text-slate-500">Accelerate your career with our project-based curriculum.
+                        Choose a path that aligns with your goals.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course 1 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 p-6 flex items-end">
+                            <h3 class="text-2xl font-bold text-white">Full-Stack Web Development</h3>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center text-sm text-slate-500 mb-4">
+                                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                12 Weeks • Live Classes
+                            </div>
+                            <p class="text-slate-600 mb-6 flex-1">Master HTML, CSS, JavaScript, React, Node.js, and
+                                databases. Build 5 real-world production applications.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">React</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">Node.js</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">MongoDB</span>
+                            </div>
+                            <button onclick="enroll()"
+                                class="w-full py-2.5 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-colors">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-600 p-6 flex items-end">
+                            <h3 class="text-2xl font-bold text-white">Data Structures & Algorithms</h3>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center text-sm text-slate-500 mb-4">
+                                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                8 Weeks • Problem Solving
+                            </div>
+                            <p class="text-slate-600 mb-6 flex-1">Crack top tech interviews. Learn arrays, trees,
+                                graphs, dynamic programming, and advanced problem-solving techniques.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">C++</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">Java</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">Python</span>
+                            </div>
+                            <button onclick="enroll()"
+                                class="w-full py-2.5 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-colors">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 p-6 flex items-end">
+                            <h3 class="text-2xl font-bold text-white">Algorithmic Trading</h3>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center text-sm text-slate-500 mb-4">
+                                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                10 Weeks • Live Markets
+                            </div>
+                            <p class="text-slate-600 mb-6 flex-1">Learn to build, backtest, and deploy automated trading
+                                strategies using Python, Pandas, and broker APIs.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">Python</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">Pandas</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-600">APIs</span>
+                            </div>
+                            <button onclick="enroll()"
+                                class="w-full py-2.5 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-colors">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-section py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <div class="mb-12 lg:mb-0">
+                        <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mb-6">Empowering the next
+                            generation of developers.</h2>
+                        <p class="text-lg text-slate-600 mb-6">
+                            At TechTrek, our mission is to democratize high-quality tech education. We believe that
+                            anyone with the drive to learn can master coding and land their dream job, regardless of
+                            their background.
+                        </p>
+                        <p class="text-lg text-slate-600 mb-8">
+                            Founded in 2023, we've helped over 5,000 students transition into tech roles at top
+                            companies worldwide through our immersive, project-based curriculum.
+                        </p>
+
+                        <div class="border-l-4 border-blue-600 pl-6 py-2 bg-slate-50 rounded-r-lg">
+                            <h4 class="font-bold text-slate-900 text-xl mb-1">Meet Your Lead Instructor</h4>
+                            <div class="flex items-center mt-4">
+                                <img class="h-16 w-16 rounded-full object-cover shadow-sm"
+                                    src="https://placehold.co/150x150/2563eb/ffffff?text=AC" alt="Alex Code">
+                                <div class="ml-4">
+                                    <p class="text-lg font-semibold text-slate-900">Alex Code</p>
+                                    <p class="text-blue-600 font-medium">Ex-FAANG Senior Engineer</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-slate-600 text-sm">Alex has 10+ years of experience building scalable
+                                distributed systems and has conducted over 200 technical interviews.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <img class="rounded-2xl shadow-xl"
+                            src="https://placehold.co/800x600/f8fafc/94a3b8?text=Students+Learning+Code"
+                            alt="Students coding together">
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-slate-100 hidden sm:block">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-green-100 p-3 rounded-full text-green-600">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-slate-900">92%</p>
+                                    <p class="text-slate-500 text-sm font-medium">Placement Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="page-section py-16 sm:py-24 bg-slate-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-extrabold sm:text-4xl text-white">Student Success Stories</h2>
+                    <p class="mt-4 text-lg text-slate-300">Don't just take our word for it. Hear from our alumni who
+                        transformed their careers.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                        <div class="flex text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <p class="text-slate-300 italic mb-6">"The DSA course completely changed my approach to
+                            problem-solving. I went from struggling in initial rounds to landing an offer at a top tech
+                            company."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white">
+                                SP</div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-white">Sarah Peterson</p>
+                                <p class="text-xs text-slate-400">Software Engineer II</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                        <div class="flex text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <p class="text-slate-300 italic mb-6">"The Web Dev bootcamp is intense but so rewarding. By week
+                            10, I had built a full-stack e-commerce app that served as the centerpiece of my portfolio."
+                        </p>
+                        <div class="flex items-center">
+                            <div
+                                class="h-10 w-10 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-white">
+                                MK</div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-white">Michael Kim</p>
+                                <p class="text-xs text-slate-400">Frontend Developer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                        <div class="flex text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current text-slate-500" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <p class="text-slate-300 italic mb-6">"The algorithmic trading curriculum bridged the gap
+                            between my finance degree and Python. The instructor support is unparalleled."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="h-10 w-10 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white">
+                                AJ</div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-white">Aisha Jenkins</p>
+                                <p class="text-xs text-slate-400">Quantitative Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section py-16 sm:py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <!-- Contact Info -->
+                        <div class="bg-blue-600 p-10 text-white">
+                            <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                            <p class="text-blue-100 mb-8">Have questions about our courses or need help deciding? Our
+                                admissions team is here to help.</p>
+
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 mr-4 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium">Headquarters</p>
+                                        <p class="text-blue-200 text-sm mt-1">123 Innovation Drive<br>Tech Hub City, CA
+                                            94016</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 mr-4 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium">Email</p>
+                                        <p class="text-blue-200 text-sm mt-1">admissions@techtrek.edu</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 mr-4 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium">Phone</p>
+                                        <p class="text-blue-200 text-sm mt-1">+1 (800) 123-4567</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form -->
+                        <div class="p-10">
+                            <form onsubmit="submitForm(event)" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
+                                    <input type="text" id="name" required
+                                        class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-slate-900">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-700">Email
+                                        Address</label>
+                                    <input type="email" id="email" required
+                                        class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-slate-900">
+                                </div>
+                                <div>
+                                    <label for="message"
+                                        class="block text-sm font-medium text-slate-700">Message</label>
+                                    <textarea id="message" rows="4" required
+                                        class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-slate-900"></textarea>
+                                </div>
+                                <button type="submit"
+                                    class="w-full py-2.5 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                                    Send Message
+                                </button>
+                            </form>
+                            <div id="form-success"
+                                class="hidden mt-4 p-3 bg-green-50 text-green-700 rounded-md text-sm text-center border border-green-200">
+                                Thank you! Your message has been sent successfully.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:justify-start mb-6 md:mb-0">
+                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-white tracking-tight">TechTrek</span>
+                </div>
+
+                <div class="flex justify-center space-x-6">
+                    <!-- Twitter / X -->
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-base text-slate-400">&copy; 2026 TechTrek Coaching. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-4 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Store all sections and links for easy access
+        const sections = document.querySelectorAll('.page-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+        // Toggle mobile menu visibility
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navigation function to simulate SPA routing
+        function navigateTo(targetId) {
+            // Hide all sections
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active states from all links
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'bg-blue-50');
+
+                // Reset desktop classes
+                if (!link.closest('#mobile-menu')) {
+                    link.classList.add('text-slate-500');
+                    link.classList.remove('text-blue-600');
+                } else {
+                    // Reset mobile classes
+                    link.classList.add('text-slate-600');
+                    link.classList.remove('text-blue-600', 'bg-blue-50');
+                }
+            });
+
+            // Show target section
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                window.scrollTo(0, 0); // Reset scroll position
+            }
+
+            // Update active states on corresponding links
+            const activeLinks = document.querySelectorAll(`.nav-link[data-target="${targetId}"]`);
+            activeLinks.forEach(link => {
+                if (!link.closest('#mobile-menu')) {
+                    // Desktop active state
+                    link.classList.remove('text-slate-500');
+                    link.classList.add('text-blue-600');
+                } else {
+                    // Mobile active state
+                    link.classList.remove('text-slate-600');
+                    link.classList.add('text-blue-600', 'bg-blue-50');
+                }
+            });
+
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Attach click events to all nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                navigateTo(target);
+            });
+        });
+
+        // Handle URL hash on initial load
+        function handleInitialLoad() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById(hash)) {
+                navigateTo(hash);
+            } else {
+                navigateTo('home');
+            }
+        }
+
+        // Placeholder for Enroll button
+        function enroll() {
+            const customMessage = document.createElement('div');
+            customMessage.className = 'fixed inset-0 flex items-center justify-center z-50 bg-slate-900/50 backdrop-blur-sm';
+            customMessage.innerHTML = `
+                <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm text-center transform transition-all">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                        <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Redirecting to Cart</h3>
+                    <p class="text-sm text-slate-500 mb-6">You've selected a great course! We're transferring you to the enrollment portal.</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:text-sm">Close Demo</button>
+                </div>
+            `;
+            document.body.appendChild(customMessage);
+        }
+
+        // Handle Contact Form Submission
+        function submitForm(event) {
+            event.preventDefault(); // Prevent page reload
+            const btn = event.target.querySelector('button');
+            const originalText = btn.innerText;
+
+            // Simulate network request
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            btn.classList.add('opacity-75');
+
+            setTimeout(() => {
+                event.target.reset(); // Clear form
+                btn.innerText = originalText;
+                btn.disabled = false;
+                btn.classList.remove('opacity-75');
+
+                // Show success message
+                const successMsg = document.getElementById('form-success');
+                successMsg.classList.remove('hidden');
+
+                // Hide success message after 4 seconds
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 4000);
+            }, 1000);
+        }
+
+        // Initialize App
+        window.addEventListener('load', handleInitialLoad);
+    </script>
+</body>
+
+</html>

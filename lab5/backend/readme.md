@@ -31,4 +31,5 @@ Fast, unopinionated, minimalist and framework for Node.js
 
     app.listen(PORT, () => console.log(`prg1 is running on port ${PORT}`));
     ```
-11. 
+11. In express we can add any static html pages with the help of express.static link
+12. express supports middleware, when we have to execute some functions before server execution then we use middleware. App.use always appply insert any middleware.
